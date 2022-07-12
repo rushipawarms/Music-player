@@ -13,7 +13,10 @@ body{
     margin:0;
     padding: 0;
 }
-
+nav{
+    position: sticky;
+    top: 0;
+}
 nav ul{
     display: flex;
     list-style-type: none;
@@ -39,4 +42,107 @@ nav li{
     height: 2rem;
     width: 2rem;
     padding: .25rem;
+}
+#container{
+    min-height: 65vh;
+    font-family: 'Varela Round', sans-serif ;
+    background-color: black;
+    color: white;
+    display: flex;
+    margin: 2rem auto;
+    width: 75%;
+    border-radius: .3rem;
+    padding: 1rem;
+    background-image: url('bg.jpg');
+    background-position: center center;
+}
+
+#bottom{
+    position: sticky;
+    height: 15vh;
+    bottom: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+#myProgressBar{
+    width: 85vw;
+   
+}
+#icons{
+display: flex;
+align-items: center;
+justify-content: center;
+height: 2rem;
+width:2rem;
+}
+
+.white {
+    filter: invert(100%) sepia(0%) saturate(7466%) hue-rotate(0deg) brightness(94%) contrast(115%);
+    padding: .8rem;
+    margin-top: 1.5rem;
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+.black{
+    filter: invert(0%) sepia(100%) saturate(7466%) hue-rotate(0deg) brightness(94%) contrast(115%);
+    padding: .8rem;
+   
+    height: 2rem;
+    width: 2rem;
+    cursor: pointer;
+}
+
+
+ #songList h1{
+    font-size: 1.5rem;
+    
+ }
+ .songItem{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 2rem;
+    width: 18rem;
+    background-color: ghostwhite;
+    color: black;
+    border-radius: .5rem;
+    margin: 1rem;
+}
+.songItem img{ 
+
+    border-radius: 50%;
+    height: 1.5rem;
+    width: 1.5rem;
+    
+}
+
+.timestamp{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .7rem;
+}
+.songListPlay{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.songItemContainer{
+    margin-top: 1rem;
+}
+
+.songInfo{
+   color: white;
+  margin: .5rem;
+ 
+}
+.songInfo img{
+    height: 1.5rem;
+    width: 3.5rem;
 }
