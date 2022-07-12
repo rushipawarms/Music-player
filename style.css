@@ -1,3 +1,42 @@
-#hello{
-background-color: blueviolet;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&family=Varela+Round&display=swap');
+
+
+/* font-family: 'Ubuntu', sans-serif;
+font-family: 'Varela Round', sans-serif; */
+
+body{
+    background-color: aliceblue;
+}
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+    height: 3rem;
+    width: 100%;
+    background-color: black;
+    align-items: center;
+
+
+}
+
+nav li{
+    font-family: 'Varela Round', sans-serif ;
+    color: white;
+    padding: 0 0.5rem;
+}
+.brand{
+    display: flex;
+    align-items: center;
+   
+}
+.brand img{
+    height: 2rem;
+    width: 2rem;
+    padding: .25rem;
 }
