@@ -5,8 +5,11 @@ let progressBar=document.querySelector("#myProgressBar")
 let gif=document.querySelector("#gif")
 let songItems=document.querySelectorAll(".songItem");
 let songItemPlay=document.querySelectorAll(".songItemPlay");
+let previous=document.querySelector("#previous");
+let next=document.querySelector("#next");
 let songIndex=1;
-
+console.log(previous);
+console.log(next)
 
 let songs=[{songName:"song 1",filePath:"songs/1.mp3",coverPath:"covers/1.jpg"},
 {songName:"song 2",filePath:"songs/2.mp3",coverPath:"covers/2.jpg"},
@@ -75,7 +78,7 @@ songItemPlay.forEach((Element,i)=>{
         if(audioElement.paused || audioElement.currentTime<0)
     {
         makeAllPause();
-        songIndex=e.target.id;
+        songIndex=parseInt( e.target.id);
         e.target.src="circle-pause-solid.svg"
        audioElement.src=`songs/${songIndex}.mp3`;
         audioElement.currentTime=0;
@@ -86,10 +89,81 @@ songItemPlay.forEach((Element,i)=>{
         masterSong.innerText=songs[songIndex-1].songName
     }
     else{
-        audioElement.pause();
-        playPauseButton.src="play-solid.svg";
-        gif.style.opacity=0;
-        makeAllPause()
+        if(e.target.id==songIndex)
+        {
+            audioElement.pause();
+            playPauseButton.src="play-solid.svg";
+            gif.style.opacity=0;
+            makeAllPause()
+        }
+        else{
+            makeAllPause();
+        songIndex=parseInt( e.target.id);
+        e.target.src="circle-pause-solid.svg"
+       audioElement.src=`songs/${songIndex}.mp3`;
+        audioElement.currentTime=0;
+        audioElement.play();
+        playPauseButton.src="circle-pause-solid.svg";
+        gif.style.opacity=1;
+        console.log(masterSong)
+        masterSong.innerText=songs[songIndex-1].songName
+        }
     }
     })
 })
+
+previous.addEventListener("click",()=>{
+    console.log("previous");
+    if(songIndex<=1)
+    {
+        songIndex=9;
+    }
+    else{
+        songIndex=songIndex-1;
+    }
+    console.log(songIndex);
+    audioElement.src=`songs/${songIndex}.mp3`;
+        audioElement.currentTime=0;
+        audioElement.play();
+        playPauseButton.src="circle-pause-solid.svg";
+        gif.style.opacity=1;
+        makeAllPause()
+        for(let i=1;i<=songItemPlay.length;i++)
+        {
+            if(i==songIndex)
+            {
+                songItemPlay[i-1].src="circle-pause-solid.svg"
+            }
+        }
+        masterSong.innerText=songs[songIndex-1].songName
+
+})
+
+next.addEventListener("click",()=>{
+
+    console.log("next");
+    if(songIndex>=9)
+    {
+        songIndex=0;
+    }
+    else{
+        songIndex=songIndex+1;
+    }
+    console.log(songIndex);
+    audioElement.src=`songs/${songIndex}.mp3`;
+        audioElement.currentTime=0;
+        audioElement.play();
+        playPauseButton.src="circle-pause-solid.svg";
+        gif.style.opacity=1;
+        makeAllPause()
+        for(let i=1;i<=songItemPlay.length;i++)
+        {
+            if(i==songIndex)
+            {
+                songItemPlay[i-1].src="circle-pause-solid.svg"
+            }
+        }
+        masterSong.innerText=songs[songIndex-1].songName
+
+})
+
