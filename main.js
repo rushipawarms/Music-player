@@ -144,7 +144,7 @@ next.addEventListener("click",()=>{
     console.log("next");
     if(songIndex>=9)
     {
-        songIndex=0;
+        songIndex=1;
     }
     else{
         songIndex=songIndex+1;
