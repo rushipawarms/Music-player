@@ -38,6 +38,9 @@ nav li{
     align-items: center;
    
 }
+.heading{
+    color: rgb(78, 216, 78);
+}
 .brand img{
     height: 2rem;
     width: 2rem;
@@ -54,7 +57,7 @@ nav li{
     border-radius: .3rem;
     padding: 1rem;
     background-image: url('bg.jpg');
-    background-position: center left;
+    background-position: center right;
 }
 
 #bottom{
